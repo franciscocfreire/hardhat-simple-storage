@@ -17,11 +17,20 @@ async function main() {
     console.log(`Deployed contract to: ${simpleStorage.address}`);
     // what happens when we deploy to our hardhat network?
     console.log(network.config);
-    if (network.config.chainId === 4 && process.env.ETHERSCAN_API_KEY) {
+    if (network.config.chainId === 5 && process.env.ETHERSCAN_API_KEY) {
         // Wait six blocks
+        console.log("Waiting for block txes...")
         await simpleStorage.deployTransaction.wait(6);
         await verify(simpleStorage.address, []);
     }
+
+    const currentValue = await simpleStorage.retrieve();
+    console.log(`Current Value is: ${currentValue}`);
+
+    const transactionResponse = await simpleStorage.store(7);
+    await transactionResponse.wait(1);
+    const updatedValue = await simpleStorage.retrieve();
+    console.log(`Updated Value is: ${updatedValue}`);
 }
 
 async function verify(contractAddress, args) {
