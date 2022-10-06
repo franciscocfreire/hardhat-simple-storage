@@ -1,6 +1,10 @@
+const { task } = require("hardhat/config");
+
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 require("@nomiclabs/hardhat-etherscan");
+require("./task/block-number");
+require("./task/accounts");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 
