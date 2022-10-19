@@ -12,14 +12,15 @@ async function main() {
     const simpleStorage = await SimpleStorageFactory.deploy();
     await simpleStorage.deployed();
 
+
     // what's the private key?
     // what's the rpc url?
     console.log(`Deployed contract to: ${simpleStorage.address}`);
     // what happens when we deploy to our hardhat network?
     console.log(network.config);
     if (network.config.chainId === 5 && process.env.ETHERSCAN_API_KEY) {
-        // Wait six blocks
-        console.log("Waiting for block txes...")
+        // Wait six blocks for verify the contract
+        console.log("Waiting for block confirmations...")
         await simpleStorage.deployTransaction.wait(6);
         await verify(simpleStorage.address, []);
     }
