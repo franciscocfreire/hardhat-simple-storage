@@ -125,4 +125,5 @@ typechain-types
 #Hardhat files
 cache
 artifacts
+gas-reporter.txt
 
