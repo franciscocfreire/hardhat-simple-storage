@@ -6,6 +6,7 @@ require("@nomiclabs/hardhat-etherscan");
 require("./task/block-number");
 require("./task/accounts");
 require("hardhat-gas-reporter");
+require('solidity-coverage')
 
 /** @type import('hardhat/config').HardhatUserConfig */
 

@@ -126,4 +126,6 @@ typechain-types
 cache
 artifacts
 gas-reporter.txt
+coverage.json
+coverage
 
