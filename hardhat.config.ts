@@ -1,12 +1,12 @@
-const { task } = require("hardhat/config");
-
-require("@nomicfoundation/hardhat-toolbox");
-require("dotenv").config();
-require("@nomiclabs/hardhat-etherscan");
-require("./task/block-number");
-require("./task/accounts");
-require("hardhat-gas-reporter");
-require('solidity-coverage')
+import "@nomicfoundation/hardhat-toolbox"
+import "dotenv/config"
+import "@nomiclabs/hardhat-etherscan"
+import "./task/block-number"
+import "./task/accounts"
+import "hardhat-gas-reporter"
+import "solidity-coverage"
+import "@nomiclabs/hardhat-ethers"
+import "@typechain/hardhat"
 
 /** @type import('hardhat/config').HardhatUserConfig */
 

@@ -1,6 +1,6 @@
 // imports
-const { ethers, run, network } = require("hardhat");
-require("dotenv").config();
+import { ethers, run, network } from "hardhat";
+import "dotenv/config"
 
 // async main
 async function main() {
@@ -34,7 +34,7 @@ async function main() {
     console.log(`Updated Value is: ${updatedValue}`);
 }
 
-async function verify(contractAddress, args) {
+async function verify(contractAddress: string, args: any[]) {
     console.log("Verifying contract...");
 
     try {
@@ -42,7 +42,7 @@ async function verify(contractAddress, args) {
             address: contractAddress,
             constructorArguments: args,
         });
-    } catch (e) {
+    } catch (e: any) {
         if (e.message.toLowerCase().includes("already verified")) {
             console.log("Already Verifed!");
         } else {

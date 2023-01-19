@@ -128,4 +128,6 @@ artifacts
 gas-reporter.txt
 coverage.json
 coverage
+typechain
+typechain-types
 
